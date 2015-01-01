@@ -1,0 +1,4 @@
+%h1 All of da kittays!
+= link_to "Create your own lil kittehh!", new_kitten_path
+- @kittens.each do |kitten|
+  %li= link_to "#{kitten.name}", kitten

@@ -1,0 +1,5 @@
+%h1= "Profile of #{@kitten.name}"
+%p= "I am #{pluralize(@kitten.age, 'year')} old."
+%p= "I am #{@kitten.cuteness} cute, and #{@kitten.softness} soft!"
+= link_to "edit", edit_kitten_path
+= link_to "delete", @kitten, method: :delete, data: { confirm: 'Are you sure?' }

@@ -9,12 +9,18 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
+# https://github.com/plataformatec/simple_form
+# rails generate simple_form:install
+# options: --bootstrap, --foundation
 gem 'simple_form'
 gem 'bootstrap-sass',          '3.2.0.0'
+# Usage: from root dir: annotate
+#options: --exclude fixtures, tests, factories, serializers, routes, delete
 gem 'annotate', '~> 2.6.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
+  gem 'haml-rails', '>= 0.3.4'
   gem 'sqlite3'
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'

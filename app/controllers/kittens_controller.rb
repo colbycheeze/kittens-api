@@ -26,15 +26,29 @@ class KittensController < ApplicationController
   end
 
   def destroy
-    Kitten.find(params[:id].destroy)
+    Kitten.find(params[:id]).destroy
     redirect_to root_path
   end
 
   def index
     @kittens = Kitten.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @kittens }
+    end
   end
 
   def show
     @kitten = Kitten.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @kitten }
+    end
+  end
+
+  def kitten_params
+    params.require(:kitten).permit(:name, :age, :cuteness, :softness)
   end
 end
